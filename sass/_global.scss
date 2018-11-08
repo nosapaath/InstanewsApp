@@ -1,0 +1,9 @@
+body{
+  flex-direction: column; 
+  background-color: black;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center; 
+  justify-content: center;
+  align-content: center;
+}

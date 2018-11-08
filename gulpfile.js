@@ -1,49 +1,31 @@
 var gulp = require("gulp"),
-  uglify = require("gulp-uglify"),
+  terser = require("gulp-terser"),
   rename = require("gulp-rename"),
-  browserSync = require('browser-sync').create(), 
+  browserSync = require("browser-sync").create(),
   eslint = require("gulp-eslint"),
   sass = require("gulp-sass"),
   autoprefixer = require("gulp-autoprefixer"),
   cssnano = require("gulp-cssnano"),
-  prettyError = require('gulp-prettyerror');
+  prettyError = require("gulp-prettyerror"), 
+  reload = browserSync.reload;
 
-
-// gulp.task("js", function() {
-//   return gulp
-//     .src("./js/*.js") // What files do we want gulp to consume?
-//     .pipe(eslint())
-//     .pipe(eslint.format())
-//     .pipe(uglify()) // Call the uglify function on these files
-//     .pipe(rename({ extname: ".min.js" })) // Rename the uglified file
-//     .pipe(gulp.dest("./build/js")); // Where do we put the result?
-// });
-
-// create a task that ensures the `js` task is complete before
-// reloading browsers
-// gulp.task('js-watch', function (done) {
-//   browserSync.reload();
-//   done();
-// });
-
-// use default task to launch Browsersync and watch JS files
-// gulp.task('start-sync', ['js'], function () {
-//   // Serve files from the root of this project
-//   browserSync.init({
-//       server: {
-//           baseDir: "./"
-//       }    
-//   });
-//   // add browserSync.reload to the tasks array to make
-//   // all browsers reload after tasks are complete.
-//   gulp.watch("js/*.js", gulp.series('js','js-watch'));
-// });
+gulp.task("scripts", function() {
+  return gulp
+    .src("./js/main.js")
+    .pipe(eslint())
+    .pipe(eslint.format())
+    .pipe(terser())
+    .pipe(rename({ extname: ".min.js" })) 
+    .pipe(gulp.dest("./build/js"))
+    .pipe(browserSync.stream()); 
+});
 
 gulp.task("sass", function() {
   return gulp
     .src("./sass/style.scss")
     .pipe(prettyError())
     .pipe(sass())
+    // includePaths: ['scss']
     .pipe(
       autoprefixer({
         browsers: ["last 2 versions"]
@@ -52,7 +34,25 @@ gulp.task("sass", function() {
     .pipe(gulp.dest("./build/css"))
     .pipe(cssnano())
     .pipe(rename("style.min.css"))
-    .pipe(gulp.dest("./build/css"));
+    .pipe(gulp.dest("./build/css"))
+    .pipe(browserSync.stream());
 });
 
-// gulp.task('default', gulp.parallel('js', 'start-sync','sass'));
+  gulp.task('watch', function () {
+    gulp.watch(["./sass/*.scss", ], gulp.series("sass"));
+    gulp.watch("./js/*.js", gulp.series("scripts"));
+  });  
+
+  gulp.task('browser-sync', function(){
+    browserSync.init({
+      open: true, //turn this to false if you dont want it to load new page
+      injectChanges:true,
+      server: {
+        baseDir:"./"
+      }
+    });
+    gulp.watch(["./build/js/*.js", "./build/css/*.css"]).on("change", reload );
+  });
+gulp.task('default', gulp.parallel('browser-sync', 'watch'));
+
+// , 'watch', 'start-sync' 

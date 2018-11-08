@@ -1,32 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="css/vendor/reset.css">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="./build/css/style.css">
   <title>Instanews</title>
 </head>
 
 <body>
-  <div class="wrapper">
+  <header>
     <div class="applogo">
       <object id="svg1" data="images/nyt-logo.svg" type="image/svg+xml"></object>
     </div>
     <p class="instruction">Choose a section:</p>
     <div class="selectdiv">
       <label>
-        <select id="selections">
+        <select id="selectBox">
           <option>Sections...</option>
+          <option value="politics">U.S.</option>
+          <option value="world">World</option>
+          <option value="national">National</option>
+          <option value="upshot">Upshot</option>
+          <option value="nyregion">NY Region</option>
+          <option value="business">Business</option>
+          <option value="technology">samosa</option>
+          <option value="science">Science</option>
+          <option value="health">Health</option>
+          <option value="opinion">Opinion</option>
+          <option value="sports">Sports</option>
+          <option value="arts">Arts</option>
+          <option value="books">Books</option>
+          <option value="movies">Movies</option>
+          <option value="theater">Theather</option>
+          <option value="sundayreview">Sunday Review</option>
+          <option value="fashion">Fashion</option>
+          <option value="tmagazine">Tmagazine</option>
+          <option value="food">Food</option>
+          <option value="travel">Travel</option>
+          <option value="magazine">Magazine</option>
+          <option value="realestate">Real Estate</option>
+          <option value="automobiles">Auto Mobiles</option>
+          <option value="obituaries">Obituaries</option>
+          <option value="insider">Insider</option>
         </select>
+
+    
       </label>
     </div>
-  </div> 
-  <div class="article-wrapper">
-  </div>
+  </header>
+  <main class="article-wrapper">
+    <ul id="newsId">
+
+    </ul>
+  </main>
+  <footer>
+    <!--Copyright Footer-->
+  </footer>
   <script src="js/vendor/jquery-3.3.1.min.js"></script>
-  <script src="js/main.js"></script>
+  <script src="./js/main.js"></script>
 </body>
 
 </html>
