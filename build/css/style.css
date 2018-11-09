@@ -89,7 +89,7 @@ select::-ms-expand {
   word-break: normal; }
 
 img {
-  height: 200px; }
+  width: 100%; }
 
 .newsBox {
   height: 400px;
@@ -116,7 +116,10 @@ img {
   color: white; }
 
 .newsWrapper {
-  height: 200px; }
+  min-height: 200px; }
+
+.newsCaption {
+  background: rgba(0, 0, 0, 0.5); }
 
 @font-face {
   font-family: 'Open Sans';
