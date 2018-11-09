@@ -14,6 +14,7 @@ $(function() {
       if (!data.results) {
         $("#selectBox").append("sorry no news today!");
       } else {
+        $("header").height('400px');
         $("#newsId").empty();
         var count = 0;
         $.each(data.results, function(index, v) {

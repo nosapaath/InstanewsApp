@@ -92,7 +92,6 @@ img {
   width: 100%; }
 
 .newsBox {
-  height: 400px;
   background-size: cover;
   position: center;
   display: -webkit-box;
@@ -107,16 +106,15 @@ img {
           justify-content: flex-end;
   -webkit-box-align: center;
       -ms-flex-align: center;
-          align-items: center; }
+          align-items: center;
+  height: 400px; }
 
 .newsCaption {
   line-height: 1rem;
   text-align: center;
   text-decoration: none;
-  color: white; }
-
-.newsWrapper {
-  min-height: 200px; }
+  color: white;
+  padding: 5px; }
 
 .newsCaption {
   background: rgba(0, 0, 0, 0.5); }
@@ -154,16 +152,17 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  padding: 60px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 400px; }
+  height: 80vh; }
+  header .applogo {
+    margin-bottom: 50px; }
 
 body {
   -webkit-box-orient: vertical;
@@ -185,4 +184,16 @@ body {
 
 footer {
   color: white;
-  text-align: center; }
+  text-align: center;
+  padding: 10px;
+  height: 25px;
+  bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
