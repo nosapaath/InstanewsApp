@@ -1,9 +1,13 @@
 body{
   flex-direction: column; 
   background-color: black;
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
   align-items: center; 
-  justify-content: center;
+  justify-content: space-between;
   align-content: center;
+}
+
+footer{
+  color:white;
+  text-align: center;
 }

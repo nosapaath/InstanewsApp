@@ -3,3 +3,27 @@ img{
   height: 200px;
 }
 
+
+.newsBox{
+  height: 400px;
+  background-size:cover;
+  position: center;
+  display: flex;
+  flex-flow:column nowrap;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.newsCaption{
+  line-height: 1rem;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+}
+
+.newsWrapper{
+  height: 200px;
+}
+
+
+
