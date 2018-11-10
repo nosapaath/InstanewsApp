@@ -25,17 +25,21 @@ img{
 
 .newsCaption{
   line-height: 1rem;
-  text-align: center;
+  display: flex;
+  flex-flow: center nowrap;
+  align-items: center; 
+  justify-content: center;
   text-decoration: none;
+  text-align: center;
   color: white;
-  padding: 5px;
+  padding: 5px 0px 5px 0px;
   height: 100px;
-}
-
-
-.newsCaption{
+  overflow: hidden;
   background: rgba(0,0,0,0.5);
+  width: 100%
 }
+
+
 
 
 
