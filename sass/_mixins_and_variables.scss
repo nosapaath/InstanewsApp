@@ -1,6 +1,9 @@
 $primary-color: #333;
 $desktop-width: 1000px;
 $tablet-width: 600px;
+$base-font : 16px;
+$base-colorf : #ffffff;
+$base-famfont : 'Open Sans';
 
 @mixin desktop {
   @media (min-width: $desktop-width) {

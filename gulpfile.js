@@ -13,7 +13,7 @@ gulp.task("scripts", function() {
   return gulp
     .src("./js/main.js")
     .pipe(eslint())
-    .pipe(eslint.format())
+    .pipe(eslint.format()) 
     .pipe(terser())
     .pipe(rename({ extname: ".min.js" })) 
     .pipe(gulp.dest("./build/js"))

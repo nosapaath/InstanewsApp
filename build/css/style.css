@@ -91,6 +91,15 @@ select::-ms-expand {
 img {
   width: 100%; }
 
+@media (min-width: 600px) {
+  .newsWrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; } }
+
+@media (min-width: 1000px) {
+  .newsWrapper {
+    grid-template-columns: 1fr 1fr 1fr 1fr; } }
+
 .newsBox {
   background-size: cover;
   position: center;
@@ -160,9 +169,29 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 80vh; }
+  height: 70vh; }
+  @media (min-width: 600px) {
+    header {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: row;
+              flex-direction: row; } }
   header .applogo {
     margin-bottom: 50px; }
+  header .chooseOption {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
 
 body {
   -webkit-box-orient: vertical;
@@ -179,11 +208,13 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -ms-flex-line-pack: center;
-      align-content: center; }
+  font-family: "Open Sans";
+  color: #ffffff;
+  font-weight: 300;
+  font-style: normal; }
 
 footer {
-  color: white;
+  color: #c2c2c2;
   text-align: center;
   padding: 10px;
   height: 25px;

@@ -3,6 +3,15 @@ img{
   width: 100%;
 }
 
+.newsWrapper{
+  @include tablet{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  @include desktop{
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
 
 .newsBox{
   background-size:cover;
@@ -20,6 +29,7 @@ img{
   text-decoration: none;
   color: white;
   padding: 5px;
+  height: 100px;
 }
 
 
