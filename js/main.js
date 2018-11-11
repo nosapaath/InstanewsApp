@@ -1,5 +1,6 @@
 $(function() {
   $("#selectBox").on("change", function(event) {
+    $(".loader").css({display:"flex"},5000);
     var newDest = event.target.value;
     var url =
       "https://api.nytimes.com/svc/topstories/v2/" +
@@ -14,7 +15,9 @@ $(function() {
       if (!data.results) {
         $("#selectBox").append("sorry no news today!");
       } else {
-        $("header").height('400px');
+        $("header").height('300px');
+        $("header").css({padding: "5px"});
+        $("#headBox").css({height: "100%"});
         $("#newsId").empty();
         var count = 0;
         $.each(data.results, function(index, v) {
@@ -25,12 +28,14 @@ $(function() {
             $('#newsId').append(
               '<div class="newsBox" style="background-image:url(' + source + ');"><a href="url" class="newsCaption"><p >' + caption +' </p></a></div>'
             );
-          }
+          } else $(".loader").css({display:"none"});
         });
       }
     });
   });
 });
+
+
 
 
 

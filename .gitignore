@@ -1,3 +1,4 @@
+node_modules/
 .DS_Store
 .DS_Store?
 ._*
@@ -6,4 +7,3 @@
 ehthumbs.db
 *[Tt]humbs.db
 *.Trahes
-node_modules/

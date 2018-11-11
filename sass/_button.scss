@@ -19,14 +19,15 @@ select::-ms-expand {
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
   right: 11px;
-  
-  top: 18px;
+  top:8px;
+  color: black;
   padding: 0 0 2px;
   border-bottom: 1px solid #999;
-  /*left line */
-  
   position: absolute;
   pointer-events: none;
+  @include tablet{
+    top: 10px;
+  }
 }
 
 .selectdiv select {
@@ -36,7 +37,7 @@ select::-ms-expand {
   display: block;
   width: 100%;
   max-width: 400px;
-  height: 50px;
+  height: 30px;
   float: right;
   margin: 5px 0px;
   padding: 0px 40px;

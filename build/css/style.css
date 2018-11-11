@@ -61,12 +61,15 @@ select::-ms-expand {
   -webkit-transform: rotate(90deg);
   transform: rotate(90deg);
   right: 11px;
-  top: 18px;
+  top: 8px;
+  color: black;
   padding: 0 0 2px;
   border-bottom: 1px solid #999;
-  /*left line */
   position: absolute;
   pointer-events: none; }
+  @media (min-width: 600px) {
+    .selectdiv:after {
+      top: 10px; } }
 
 .selectdiv select {
   -webkit-appearance: none;
@@ -75,7 +78,7 @@ select::-ms-expand {
   display: block;
   width: 100%;
   max-width: 400px;
-  height: 50px;
+  height: 30px;
   float: right;
   margin: 5px 0px;
   padding: 0px 40px;
@@ -184,14 +187,38 @@ header {
       -ms-flex-align: center;
           align-items: center;
   height: 70vh; }
+  header #headBox {
+    height: 70%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    @media (min-width: 600px) {
+      header #headBox {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+                flex-direction: row;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center; } }
   @media (min-width: 600px) {
     header {
       -webkit-box-orient: horizontal;
       -webkit-box-direction: normal;
           -ms-flex-direction: row;
               flex-direction: row; } }
-  header .applogo {
-    margin-bottom: 50px; }
   header .chooseOption {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -206,6 +233,12 @@ header {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center; }
+    @media (min-width: 600px) {
+      header .chooseOption {
+        -webkit-box-align: start;
+            -ms-flex-align: start;
+                align-items: flex-start;
+        height: 50px; } }
 
 body {
   -webkit-box-orient: vertical;
@@ -226,6 +259,12 @@ body {
   color: #ffffff;
   font-weight: 300;
   font-style: normal; }
+
+.loader {
+  display: none;
+  -ms-flex-item-align: center;
+      align-self: center;
+  width: 50px; }
 
 footer {
   color: #c2c2c2;
