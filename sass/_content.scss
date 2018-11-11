@@ -31,20 +31,27 @@ img{
   text-decoration: none;
   text-align: center;
   color: white;
-  height: 0px;
   background: rgba(0,0,0,0.5);
   width: 100%;
-  font-size: 1.3rem;
+  height:100px;
   font-weight: 300;
   line-height: 1.5rem;
+  @include desktop{
+    height: 0px;
+    font-size: 1.2rem;
+  }
 }
 
 
 .newsBox:hover .newsCaption { 
-  display: flex;
-  align-items: center;
-  height: 400px;
+  @include desktop{
+    display: flex;
+    align-items: center;
+    height: 250px;
+  } 
 }
+
+
 
 
 

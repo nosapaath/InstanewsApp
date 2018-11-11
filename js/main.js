@@ -1,5 +1,6 @@
 $(function() {
   $("#selectBox").on("change", function(event) {
+    $("html, body").animate({ scrollTop: $('#newsId').offset().top-300 }, 1500);
     $(".loader").css({display:"flex"},5000);
     var newDest = event.target.value;
     var url =
@@ -25,8 +26,9 @@ $(function() {
             count++;
             let source = v.multimedia[4].url;
             let caption = v.abstract;
+            let read = v.short_url;
             $('#newsId').append(
-              '<div class="show'+ count +' newsBox" style="background-image:url(' + source + ');"><a href="url" ><p class="newsCaption">' + caption +'</p></a></div>'
+              '<div class="show'+ count +' newsBox" style="background-image:url(' + source + ');"><a href="'+ read+'" target="_blank"><p class="newsCaption">' + caption +'</p></a></div>'
             );
           }
         });

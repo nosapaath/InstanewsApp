@@ -135,21 +135,25 @@ img {
   text-decoration: none;
   text-align: center;
   color: white;
-  height: 0px;
   background: rgba(0, 0, 0, 0.5);
   width: 100%;
-  font-size: 1.3rem;
+  height: 100px;
   font-weight: 300;
   line-height: 1.5rem; }
+  @media (min-width: 1000px) {
+    .newsCaption {
+      height: 0px;
+      font-size: 1.2rem; } }
 
-.newsBox:hover .newsCaption {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  height: 400px; }
+@media (min-width: 1000px) {
+  .newsBox:hover .newsCaption {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: 250px; } }
 
 @font-face {
   font-family: 'Open Sans';
