@@ -26,36 +26,13 @@ $(function() {
             let source = v.multimedia[4].url;
             let caption = v.abstract;
             $('#newsId').append(
-              '<div class="newsBox" style="background-image:url(' + source + ');"><a href="url" class="newsCaption"><p >' + caption +' </p></a></div>'
+              '<div class="show'+ count +' newsBox" style="background-image:url(' + source + ');"><a href="url" ><p class="newsCaption">' + caption +'</p></a></div>'
             );
-          } else $(".loader").css({display:"none"});
+          }
         });
-      }
+      } $(".loader").css({display:"none"});
     });
   });
 });
 
 
-
-
-
-// var selectedNews = $('#selectBox').val();
-// console.log(selectedNews);
-// var newDest = event.target.value;
-
-// console.log(selectedNews);
-// var df = new DocumentFragment();
-
-// let imgUrl = document.createElement("img");
-// let figCap = document.createElement("figcaption");
-// let source = v.multimedia[4].url
-// let list = document.createElement("li");
-// let soClassy = newDest + count;
-// list.className = soClassy;                 // console.log(source); Printing background source
-// imgUrl.src = source;
-// figCap.textContent = v.abstract;
-// list.appendChild(figCap);
-// df.appendChild(list);
-// $(soClassy).css("background-image", 'url("' + source + '")');
-// console.log(soClassy);
-// console.log("background-image", 'url("' + source + '")');

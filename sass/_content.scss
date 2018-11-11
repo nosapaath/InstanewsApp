@@ -20,25 +20,31 @@ img{
   flex-flow:column nowrap;
   justify-content: flex-end;
   align-items: center;
-  height: 400px
+  height: 400px;
+  overflow: hidden;
 }
 
-.newsCaption{
-  line-height: 1rem;
+.newsCaption {
+  transition: all ease 0.8s;
   display: flex;
   flex-flow: center nowrap;
-  align-items: center; 
-  justify-content: center;
   text-decoration: none;
   text-align: center;
   color: white;
-  padding: 5px 0px 5px 0px;
-  height: 100px;
-  overflow: hidden;
+  height: 0px;
   background: rgba(0,0,0,0.5);
-  width: 100%
+  width: 100%;
+  font-size: 1.3rem;
+  font-weight: 300;
+  line-height: 1.5rem;
 }
 
+
+.newsBox:hover .newsCaption { 
+  display: flex;
+  align-items: center;
+  height: 400px;
+}
 
 
 
