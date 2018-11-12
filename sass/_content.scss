@@ -29,28 +29,28 @@ img{
   transition: all ease 0.8s;
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-flow: row nowrap;
   text-decoration: none;
   text-align: center;
   color: white;
   background: rgba(0,0,0,0.5);
-  background-position: center;
   width: 100%;
   height:100px;
   font-weight: 300;
   line-height: 1.5rem;
+  height: 170px;
   @include desktop{
     height: 0px;
+    overflow: hidden;
   }
+
 }
 
 
 .newsBox:hover .newsCaption { 
   @include desktop{
-    display: flex;
-    align-items: center;
     height: 250px;
-    overflow: hidden;
   } 
 }
 

@@ -132,6 +132,9 @@ img {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-flow: row nowrap;
@@ -140,25 +143,19 @@ img {
   text-align: center;
   color: white;
   background: rgba(0, 0, 0, 0.5);
-  background-position: center;
   width: 100%;
   height: 100px;
   font-weight: 300;
-  line-height: 1.5rem; }
+  line-height: 1.5rem;
+  height: 170px; }
   @media (min-width: 1000px) {
     .newsCaption {
-      height: 0px; } }
+      height: 0px;
+      overflow: hidden; } }
 
 @media (min-width: 1000px) {
   .newsBox:hover .newsCaption {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    height: 250px;
-    overflow: hidden; } }
+    height: 250px; } }
 
 @font-face {
   font-family: 'Open Sans';
@@ -193,29 +190,38 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 60px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  padding: 60px;
   height: 70vh; }
+  @media (min-width: 600px) {
+    header {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: row;
+              flex-direction: row; } }
   header #headBox {
     height: 70%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-flow: column nowrap;
-            flex-flow: column nowrap;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center; }
+            flex-flow: column nowrap; }
     @media (min-width: 600px) {
       header #headBox {
         -webkit-box-orient: horizontal;
@@ -224,30 +230,21 @@ header {
                 flex-direction: row;
         -webkit-box-pack: center;
             -ms-flex-pack: center;
-                justify-content: center;
-        -webkit-box-align: center;
-            -ms-flex-align: center;
-                align-items: center; } }
-  @media (min-width: 600px) {
-    header {
-      -webkit-box-orient: horizontal;
-      -webkit-box-direction: normal;
-          -ms-flex-direction: row;
-              flex-direction: row; } }
+                justify-content: center; } }
   header .chooseOption {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     -webkit-box-align: center;
         -ms-flex-align: center;
-            align-items: center; }
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
     @media (min-width: 600px) {
       header .chooseOption {
         -webkit-box-align: start;
@@ -274,6 +271,11 @@ body {
   color: #ffffff;
   font-weight: 300;
   font-style: normal; }
+  @media (min-width: 600px) {
+    body {
+      -webkit-box-align: inherit;
+          -ms-flex-align: inherit;
+              align-items: inherit; } }
 
 a {
   text-decoration: none; }
@@ -293,9 +295,15 @@ footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
-          align-items: center; }
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+  @media (min-width: 1000px) {
+    footer {
+      -webkit-box-align: inherit;
+          -ms-flex-align: inherit;
+              align-items: inherit;
+      padding-left: 60px; } }

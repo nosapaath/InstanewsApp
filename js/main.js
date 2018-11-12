@@ -1,7 +1,7 @@
 $(function() {
   $("#selectBox").on("change", function(event) {
     $("html, body").animate({ scrollTop: $('#newsId') }, 1500);
-    $(".loader").css({display:"flex"},1000);
+    $(".loader").css({display:"flex"});
     var newDest = event.target.value;
     var url =
       "https://api.nytimes.com/svc/topstories/v2/" +
@@ -35,10 +35,13 @@ $(function() {
       } $(".loader").css({display:"none"});
     });
   });
-
-  // $('#newsId').click(function(){
-  //   $(this).css({shadow:''});
-  // });
 });
 
+
+
+
+
+// $('#newsId').append(
+//   '<div class="show'+ count +' newsBox" style="background-image:url(' + source + ');"><a href="'+ read+'" target="_blank"><p class="newsCaption">' + caption +'</p></a></div>'
+// );
 

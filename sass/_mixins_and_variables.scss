@@ -16,3 +16,9 @@ $base-famfont : 'Open Sans';
     @content;
   }
 }
+
+@mixin flexCenter{
+  display: flex;
+  align-items: center; 
+  justify-content: space-between;
+}

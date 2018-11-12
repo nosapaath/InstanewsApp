@@ -1,13 +1,14 @@
 body{
   flex-direction: column; 
   background-color: black;
-  display: flex;
-  align-items: center; 
-  justify-content: space-between;
+  @include flexCenter;
   font-family: $base-famfont;
   color: $base-colorf;
   font-weight: 300;
   font-style: normal;
+  @include tablet{
+    align-items: inherit;
+  }
 }
 
 a {
@@ -26,7 +27,9 @@ footer{
   padding: 10px;
   height: 25px;
   bottom: 0;
-  display: flex; 
-  justify-content: center; 
-  align-items: center
+  @include flexCenter;
+  @include desktop{
+    align-items: inherit;
+    padding-left:60px;
+  }
 }
