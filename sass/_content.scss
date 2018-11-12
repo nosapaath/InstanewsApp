@@ -23,6 +23,10 @@ img{
   align-items: center;
   height: 400px;
   overflow: hidden;
+  opacity: 50%;
+  &:hover{
+    
+  }
 }
 
 .newsCaption {
@@ -53,6 +57,7 @@ img{
     height: 250px;
   } 
 }
+
 
 
 

@@ -1,25 +1,24 @@
 $(function() {
-  $("#selectBox").on("change", function(event) {
-    $("html, body").animate({ scrollTop: $('#newsId') }, 1500);
-    $(".loader").css({display:"flex"});
+  $('#selectBox').on('change', function(event) {
+    $('html, body').animate({ scrollTop: $('#newsId') }, 1500);
+    $('.loader').css({display:'flex'});
     var newDest = event.target.value;
     var url =
-      "https://api.nytimes.com/svc/topstories/v2/" +
+      'https://api.nytimes.com/svc/topstories/v2/' +
       newDest +
-      ".json?" +
-      $.param({ "api-key": "0cad7e5308a34f87945a0fd6a004bd9f" });
+      '.json?' +
+      $.param({ 'api-key': '0cad7e5308a34f87945a0fd6a004bd9f' });
     $.ajax({
       url: url,
-      method: "GET"
+      method: 'GET'
     }).done(function(data) {
-      console.log(data);
       if (!data.results) {
-        $("#selectBox").append("sorry no news today!");
+        $('#selectBox').append('sorry no news today!');
       } else {
-        $("header").height('300px');
-        $("header").css({padding: "5px"});
-        $("#headBox").css({height: "100%"});
-        $("#newsId").empty();
+        $('header').height('300px');
+        $('header').css({padding: '5px'});
+        $('#headBox').css({height: '100%'});
+        $('#newsId').empty();
         var count = 0;
         $.each(data.results, function(index, v) {
           if (v.multimedia[4] && count < 12) {
@@ -32,7 +31,7 @@ $(function() {
             );
           }
         });
-      } $(".loader").css({display:"none"});
+      } $('.loader').css({display:'none'});
     });
   });
 });

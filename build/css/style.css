@@ -121,7 +121,8 @@ img {
       -ms-flex-align: center;
           align-items: center;
   height: 400px;
-  overflow: hidden; }
+  overflow: hidden;
+  opacity: 50%; }
 
 .newsCaption {
   -webkit-transition: all ease 0.8s;
