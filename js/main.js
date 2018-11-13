@@ -19,7 +19,7 @@ $(function() {
         $('header').height('300px');
         $('header').css({padding: '5px'});
         $('#headBox').css({height: '100%'});
-        $('#newsId').empty();
+        $('#newsId').empty().fadeIn(2000);
         var count = 0;
         $.each(data.results, function(index, v) {
           if (v.multimedia[4] && count < 12) {
@@ -36,7 +36,6 @@ $(function() {
     });
   });
 });
-
 
 function scrollFunction() {
     if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {

@@ -260,6 +260,9 @@ footer {
               align-items: inherit;
       padding-left: 60px; } }
 
+#selectBox {
+  width: 100%; }
+
 #myBtn {
   display: none;
   position: fixed;
