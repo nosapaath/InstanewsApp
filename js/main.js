@@ -38,7 +38,6 @@ $(function() {
 });
 
 
-
 function scrollFunction() {
     if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
         $('#myBtn').css({display: "block"});

@@ -19,7 +19,6 @@ $base-famfont : 'Open Sans';
 @mixin flexCenter{
   display: flex;
   align-items: center; 
-  // justify-content: space-between;
 }
 
 @mixin background{

@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "gulp-eslint": "^5.0.0",
+    "select2": "^4.0.6-rc.1",
     "terser": "^3.10.11"
   }
 }

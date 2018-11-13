@@ -45,51 +45,10 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-.instruction {
-  color: white; }
-
 .selectdiv {
-  position: relative; }
-
-select::-ms-expand {
-  display: none; }
-
-.selectdiv:after {
-  content: '<>';
-  font: 17px "Consolas", monospace;
-  color: #333;
-  -webkit-transform: rotate(90deg);
-  transform: rotate(90deg);
-  right: 11px;
-  top: 8px;
-  color: black;
-  padding: 0 0 2px;
-  border-bottom: 1px solid #999;
-  position: absolute;
-  pointer-events: none; }
-  @media (min-width: 600px) {
-    .selectdiv:after {
-      top: 10px; } }
-
-.selectdiv select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  display: block;
-  width: 100%;
-  max-width: 400px;
-  height: 30px;
-  float: right;
-  margin: 5px 0px;
-  padding: 0px 40px;
-  font-size: 16px;
-  line-height: 1.75;
-  color: #333;
-  background-color: #ffffff;
-  background-image: none;
-  border: 1px solid #cccccc;
-  -ms-word-break: normal;
-  word-break: normal; }
+  position: relative;
+  height: 50px;
+  margin: 5px 0px; }
 
 img {
   width: 100%; }
@@ -273,7 +232,8 @@ body {
               align-items: inherit; } }
 
 a {
-  text-decoration: none; }
+  text-decoration: none;
+  width: 100%; }
 
 .loader {
   display: none;
