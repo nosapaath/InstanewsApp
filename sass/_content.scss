@@ -14,33 +14,26 @@ img{
 }
 
 .newsBox{
-  background-size:cover;
-  background-position: center;
-  position: center;
-  display: flex;
-  flex-flow:column nowrap;
+  @include background;
+  @include flexCenter;
   justify-content: flex-end;
-  align-items: center;
+  flex-direction:column;
   height: 400px;
   overflow: hidden;
   opacity: 50%;
-  &:hover{
-    
-  }
 }
 
 .newsCaption {
   transition: all ease 0.8s;
-  display: flex;
+  @include flexCenter;
   justify-content: center;
-  align-items: center;
   flex-flow: row nowrap;
   text-decoration: none;
   text-align: center;
-  color: white;
+  color: $base-colorf;
   background: rgba(0,0,0,0.5);
   width: 100%;
-  height:100px;
+  height: 100px;
   font-weight: 300;
   line-height: 1.5rem;
   height: 170px;

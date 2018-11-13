@@ -1,4 +1,5 @@
 $(function() {
+  window.onscroll = function() {scrollFunction()};
   $('#selectBox').on('change', function(event) {
     $('html, body').animate({ scrollTop: $('#newsId') }, 1500);
     $('.loader').css({display:'flex'});
@@ -38,9 +39,17 @@ $(function() {
 
 
 
+function scrollFunction() {
+    if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+        $('#myBtn').css({display: "block"});
+    } else {
+        $('#myBtn').css({display: "none"});
+    }
+}
 
 
-// $('#newsId').append(
-//   '<div class="show'+ count +' newsBox" style="background-image:url(' + source + ');"><a href="'+ read+'" target="_blank"><p class="newsCaption">' + caption +'</p></a></div>'
-// );
+function topFunction() {
+    document.documentElement.scrollTop = 0;  
+}
+
 
