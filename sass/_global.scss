@@ -1,16 +1,15 @@
-
-html{
+html {
   font-size: 16px;
 }
-body{
-  flex-direction: column; 
+body {
+  flex-direction: column;
   background-color: black;
   @include flexCenter;
   font-family: $base-famfont;
   color: $base-colorf;
   font-weight: 300;
   font-style: normal;
-  @include desktop{
+  @include desktop {
     align-items: inherit;
   }
 }
@@ -20,46 +19,50 @@ a {
   width: 100%;
 }
 
-.loader{
+.loader {
   display: none;
-  align-self: center; 
+  align-self: center;
   width: 50px;
 }
 
-footer{
-  color:#c2c2c2;
+footer {
+  color: #c2c2c2;
   text-align: center;
   padding: 10px;
   height: 25px;
   bottom: 0;
   @include flexCenter;
-  @include desktop{
+  @include desktop {
     align-items: inherit;
-    padding-left:60px;
+    padding-left: 60px;
   }
 }
 
-#selectBox{
-  width:100%;
+#selectBox {
+  width: 100%;
 }
 #myBtn {
   display: none;
   position: fixed;
-  bottom: 20px; 
+  bottom: 20px;
   right: 0px;
   z-index: 99;
-  border: none; 
-  outline: none; 
+  border: none;
+  outline: none;
   background-color: red;
-  color: white; 
-  padding: 15px; 
-  border-radius: 10px; 
-  font-size: 18px; 
-  @include desktop{
+  color: white;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 18px;
+  @include desktop {
     right: 30px;
   }
 }
 
 #myBtn:hover {
-  background-color: #555; 
+  background-color: #555;
+}
+
+.select2-dropdown {
+  color: black;
 }

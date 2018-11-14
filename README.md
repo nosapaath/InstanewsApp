@@ -12,6 +12,7 @@ Feel free to use VsCode or any other editor to play around with my code.
 HTML
 SASS
 CSS
+GIT
 GULP
 JQUERY
 JAVASCRIPT 

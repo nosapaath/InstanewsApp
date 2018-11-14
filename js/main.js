@@ -1,8 +1,9 @@
 $(function() {
   window.onscroll = function() {scrollFunction()};
   $('#selectBox').on('change', function(event) {
+    $('.section').remove();
     $('html, body').animate({ scrollTop: $('#newsId') }, 1500);
-    $('.loader').css({display:'flex'});
+    $('.loader').css({'display':'flex'});
     var newDest = event.target.value;
     var url =
       'https://api.nytimes.com/svc/topstories/v2/' +
@@ -17,8 +18,8 @@ $(function() {
         $('#selectBox').append('sorry no news today!');
       } else {
         $('header').height('300px');
-        $('header').css({padding: '5px'});
-        $('#headBox').css({height: '100%'});
+        $('header').css({'padding': '5px'});
+        $('#headBox').css({'height': '100%'});
         $('#newsId').empty().fadeIn(2000);
         var count = 0;
         $.each(data.results, function(index, v) {
@@ -45,9 +46,13 @@ function scrollFunction() {
     }
 }
 
-
+//--------------ScrollBackToTop--------------//
 function topFunction() {
     document.documentElement.scrollTop = 0;  
 }
 
+//--------------SelectBoxStyling-------------//
+$(document).ready(function() {
+  $('#selectBox').select2();
+});
 

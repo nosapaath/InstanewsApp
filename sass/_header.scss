@@ -1,4 +1,5 @@
 header {
+  transition: all ease 0.8s;
   background-color: black;
   @include flexCenter;
   flex-direction: column;
@@ -6,6 +7,7 @@ header {
   height: 70vh;
   @include tablet {
     flex-direction: row;
+    ;
   }
   #headBox {
     height: 70%;

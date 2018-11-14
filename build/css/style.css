@@ -47,7 +47,7 @@ table {
 
 .selectdiv {
   position: relative;
-  height: 50px;
+  height: 30px;
   margin: 5px 0px; }
 
 img {
@@ -146,6 +146,8 @@ img {
   font-style: italic; }
 
 header {
+  -webkit-transition: all ease 0.8s;
+  transition: all ease 0.8s;
   background-color: black;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -282,3 +284,6 @@ footer {
 
 #myBtn:hover {
   background-color: #555; }
+
+.select2-dropdown {
+  color: black; }
