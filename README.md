@@ -1,4 +1,4 @@
-#Aloha Co. Project
+#InstanewsApp Project
 
 This is a responsive website, that Gets data from NYTimes. 
 
