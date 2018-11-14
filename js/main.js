@@ -53,6 +53,6 @@ function topFunction() {
 
 //--------------Select_BoxStyling-------------//
 $(document).ready(function() {
-  $('#selectBox').select2();
+  $("html").scrollTop(0);
 });
 
