@@ -48,11 +48,12 @@ function scrollFunction() {
 
 //--------------ScrollBackToTop--------------//
 function topFunction() {
-    document.documentElement.scrollTop = 0;  
+  $("html").scrollTop(0); 
 }
 
-//--------------Select_BoxStyling-------------//
+//--------------SelectBoxStyling-------------//
 $(document).ready(function() {
-  $("html").scrollTop(0);
+  $('#selectBox').select2();
 });
+
 
