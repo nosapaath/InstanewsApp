@@ -50,6 +50,9 @@ table {
   height: 30px;
   margin: 5px 0px; }
 
+span.select2-selection.select2-selection--single {
+  outline: none; }
+
 img {
   width: 100%; }
 
