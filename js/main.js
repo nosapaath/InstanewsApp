@@ -3,37 +3,42 @@ $(function() {
   $('#selectBox').on('change', function(event) {
     $('.section').remove();
     $('html, body').animate({ scrollTop: $('#newsId') }, 1500);
-    $('.loader').css({'display':'flex'});
-    let newDest = event.target.value; //changed to let
+    changeCSS('.loader','display','flex');
+    const newDest = event.target.value;
+    console.log(newDest);
     let url =
       'https://api.nytimes.com/svc/topstories/v2/' +
       newDest +
       '.json?' +
-      $.param({ 'api-key': '0cad7e5308a34f87945a0fd6a004bd9f' }); //changed to let
+      $.param({ 'api-key': 'tFeVHVERlGPxHYbtVYT2ZxUMbpPloNg2' }); 
     $.ajax({
       url: url,
       method: 'GET'
-    }).done(function(data) {
+    }).done((data) => {
       if (!data.results) {
         $('#selectBox').append('sorry no news today!');
       } else {
-        $('header').height('300px');
-        $('header').css({'padding': '5px'});
-        $('#headBox').css({'height': '100%'});
+        console.log(data.results);
+        changeCSS('header','height','300px');
+        changeCSS('header','padding','5px');
+        changeCSS('#headBox','height','100%');
         $('#newsId').empty().fadeIn(2000);
         let count = 0; 
-        $.each(data.results, function(index, v) {
+        $.each(data.results, (index, v) => {
           if (v.multimedia[4] && count < 12) {
             count++;
-            let source = v.multimedia[4].url;
-            let caption = v.abstract;
-            let read = v.short_url;
+            const source = v.multimedia[4].url;
+            const caption = v.abstract;
+            const read = v.short_url;
             $('#newsId').append(
               `<div class='show ${count} newsBox' style='background-image:url(${source});'>
-                  <a href=' ${read} ' target='_blank'><p class='newsCaption'>  ${caption} </p></a>
+                  <a href=' ${read} ' target='_blank'>
+                    <p class='newsCaption'>  ${caption} </p>
+                  </a>
               </div>`
             );
-          } $('.loader').css({display:'none'});
+            changeCSS('.loader','display','none');
+          } 
         });
       }
     }); 
@@ -41,7 +46,7 @@ $(function() {
 });
 
 let scrollFunction = () => { document.body.scrollTop > 500 || document.documentElement.scrollTop > 500 ? 
-  $('#myBtn').css({display: "block"}) : $('#myBtn').css({display: "none"});
+  changeCSS('#myBtn','display','block') : changeCSS('#myBtn','display','none');
 };
 
 //--------------ScrollBackToTop--------------//
@@ -52,5 +57,12 @@ let topFunction = () => $("html").scrollTop(0);
 $(document).ready(function() {
   $('#selectBox').select2();
 });
+
+
+let changeCSS = (att,cssStyle, value) => {
+  let styles = {};// obj = {}
+  styles[`${cssStyle}`] = value;  // obj[`${name}`]
+  $(att).css(styles);
+} 
 
 
