@@ -3,6 +3,7 @@
   "parserOptions": {
     "ecmaVersion": 6
   },
+  "parser": "babel-eslint",
   "rules": {
     "no-alert": 1,
     "camelcase": 1,

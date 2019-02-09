@@ -1,27 +1,33 @@
-var gulp = require("gulp"),
-terser = require("gulp-terser"),
-rename = require("gulp-rename"),
-browserSync = require("browser-sync").create(),
-eslint = require("gulp-eslint"),
-sass = require("gulp-sass"),
-autoprefixer = require("gulp-autoprefixer"),
-cssnano = require("gulp-cssnano"),
-prettyError = require("gulp-prettyerror"),
-reload = browserSync.reload;
+const gulp = require("gulp"),
+  terser = require("gulp-terser"),
+  rename = require("gulp-rename"),
+  browserSync = require("browser-sync").create(),
+  eslint = require("gulp-eslint"),
+  sass = require("gulp-sass"),
+  babel = require('gulp-babel'),
+  autoprefixer = require("gulp-autoprefixer"),
+  cssnano = require("gulp-cssnano"),
+  prettyError = require("gulp-prettyerror"), 
+  reload = browserSync.reload;
 
-gulp.task("scripts", function() {
-    return gulp
+gulp.task("scripts", () => {
+  return gulp
     .src("./js/main.js")
     .pipe(eslint())
-    .pipe(eslint.format())
+    .pipe(eslint.format()) 
+    .pipe(
+      babel({
+        presets:['@babel/env']
+      })
+    )
     .pipe(terser())
     .pipe(rename({ extname: ".min.js" }))
     .pipe(gulp.dest("./build/js"))
     .pipe(browserSync.stream());
 });
 
-gulp.task("sass", function() {
-    return gulp
+gulp.task("sass", () => {
+  return gulp
     .src("./sass/style.scss")
     .pipe(prettyError())
     .pipe(sass())
@@ -38,12 +44,12 @@ gulp.task("sass", function() {
     .pipe(browserSync.stream());
 });
 
-gulp.task('watch', function () {
+  gulp.task('watch', () => {
     gulp.watch(["./sass/*.scss", ], gulp.series("sass"));
     gulp.watch("./js/*.js", gulp.series("scripts"));
 });
 
-gulp.task('browser-sync', function(){
+  gulp.task('browser-sync', () =>{
     browserSync.init({
         open: true, //turn this to false if you dont want it to load new page
         injectChanges:true,
