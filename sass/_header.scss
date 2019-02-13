@@ -1,31 +1,43 @@
 header {
+
   transition: all ease 0.8s;
   background-color: black;
+
   @include flexCenter;
   flex-direction: column;
   padding: 60px;
   height: 70vh;
+
   @include tablet {
+
     flex-direction: row;
-    ;
+    
   }
   #headBox {
+
     height: 70%;
     display: flex;
     align-items: center;
     justify-content: space-around;
     flex-direction: column;
+
     @include tablet {
+
       flex-direction: row;
       justify-content: center;
+      
     }
   }
+
   .chooseOption {
+
     flex-direction: column;
     @include flexCenter;
     @include tablet{
+
       align-items: flex-start;
       height: 50px;
+      
     }
   }
 }
